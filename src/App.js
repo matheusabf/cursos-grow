@@ -14,7 +14,7 @@ function App() {
       <Nav />
 
       <Routes>
-        <Route path="/cursos" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/valorant" element={<Valorant />} />
         <Route path="/counterstrike" element={<CounterStrike />} />
         <Route path="/leagueoflegends" element={<LeagueOfLegends />} />
