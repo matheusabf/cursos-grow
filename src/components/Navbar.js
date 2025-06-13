@@ -21,8 +21,8 @@ export default function Nav() {
       <img src={logo} alt="Logo" style={{ height: '40px' }} />
 
       <div style={{ display: 'flex', gap: '1.5rem' }}>
-        <a style={{ color: '#fff', textDecoration: 'none' }} href="/cursos">HOME</a>
-        <a style={{ color: '#fff', textDecoration: 'none' }} href="/valorant">ENTRAR EM CONTATO</a>
+        <a style={{ color: '#fff', textDecoration: 'none' }} href="/">HOME</a>
+        <a style={{ color: '#fff', textDecoration: 'none' }} href="https://api.whatsapp.com/send/?phone=5517981293437&text=Oi%2C+gostaria+de+saber+mais+sobre+os+cursos+da+Grow+Gaming%21&type=phone_number&app_absent=0">ENTRAR EM CONTATO</a>
       </div>
     </nav>
   );
