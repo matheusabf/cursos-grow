@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'Oxygen';
+  src: url('./assets/oxygen.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Impede scroll horizontal, mas mantém scroll vertical */
+  font-family: 'Oxygen', sans-serif;
+}
+#root{
+
+  overflow: auto; /* Impede scroll horizontal, mas mantém scroll vertical */
+  margin-top:5rem;
+}button {
+  font-family: inherit;
+}
+
+.container {
+  display: flex;
+  min-height: 80vh; /* deixa crescer se tiver conteúdo */
+  position: relative;
+}
+
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1));
+  z-index: 0; /* abaixo do conteúdo, acima do fundo */
+  pointer-events: none;
+}
+/* Duas camadas de fundo para crossfade */
+.fundo-layer {
+  opacity: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: opacity 0.8s ease;
+  background-color: #000;
+  z-index: -2;
+  pointer-events: none;
+}
+
+
+.fundo-layer.visible {
+  opacity: 1;
+}
+
+.imagem-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  z-index: 1;
+}
+
+.personagem-img {
+  width: 3000px;
+  max-height: 90%;
+  object-fit: contain;
+  position: absolute;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+}
+
+/* Contorno gradiente dinâmico */
+.personagem-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  z-index: -1;
+  filter: blur(12px);
+  mask-image: inherit;
+  -webkit-mask-image: inherit;
+  mask-size: inherit;
+  -webkit-mask-size: inherit;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  pointer-events: none;
+}
+
+
+.personagem-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  filter: blur(12px); /* Intensidade do brilho */
+  z-index: 0;
+  mask-image: inherit;
+  mask-size: inherit;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: inherit;
+  -webkit-mask-size: inherit;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  pointer-events: none;
+}
+
+.personagem-img.animando-saida {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.personagem-img.animando-entrada {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: entrada 0.5s forwards;
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.botoes-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.botoes-container div{
+  flex-direction: row;
+  display:flex;
+  gap:2rem;
+}
+
+.botao {
+  padding: 0.75rem 2rem;
+  color: white;
+  border: none;
+  background-color: #000000b0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #ffffff90;
+}
+
+.icone-jogo {
+  width: 120px;  /* ajuste conforme o tamanho ideal do seu layout */
+  height: auto;
+  display: block;
+}
+.titulo-jogo {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+  opacity: 1;               /* começa invisível */
+  transform: translateY(20px); /* começa deslocado para baixo */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.titulo-jogo.entrada {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titulo-jogo.saida {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.botao.ativo {
+  background-color: #ffffff90;
+  /* ou outra forma de destaque vermelho */
+  /* Exemplo para deixar o ícone também vermelho: */
+  /* filter: drop-shadow(0 0 2px red); */
+}
+/* largura da scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* fundo da barra */
+::-webkit-scrollbar-track {
+  background: #000; /* preto */
+}
+
+/* cor do polegar (parte que você arrasta) */
+::-webkit-scrollbar-thumb {
+  background-color: #222; /* cinza escuro, mais clean */
+  border-radius: 10px;
+  border: 2px solid #000; /* espaço em volta para ficar clean */
+}
+
+/* quando passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* cinza mais claro no hover */
+}

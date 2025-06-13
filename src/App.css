@@ -1,0 +1,121 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.fundo-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.8s ease;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fundo-layer.visible {
+  opacity: 1;
+}
+
+.imagem-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.personagem-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  position: absolute;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+}
+
+.personagem-img.animando-saida {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.personagem-img.animando-entrada {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.conteudo-container {
+  flex: 1;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  max-height: 90vh;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.conteudo-container.animando-saida {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.conteudo-container.animando-entrada {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.botoes-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.botao {
+  padding: 0.75rem 2rem;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.botao.valorant {
+  background-color: #2563eb;
+}
+.botao.valorant:hover {
+  background-color: #1e40af;
+}
+
+.botao.cs {
+  background-color: #16a34a;
+}
+.botao.cs:hover {
+  background-color: #14532d;
+}
+
+.botao.lol {
+  background-color: #7c3aed;
+}
+.botao.lol:hover {
+  background-color: #5b21b6;
+}

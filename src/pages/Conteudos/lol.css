@@ -1,0 +1,185 @@
+/* Wrapper geral */
+.lol-wrapper {
+  background-color: #121212;
+  color: #eee;
+}
+
+/* Seções com padding e texto centralizado */
+.lol-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+/* Título principal */
+.lol-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff4655; /* Vermelho forte */
+  text-shadow: 1px 1px 5px rgba(211, 47, 47, 0.6);
+  animation: fadeSlideIn 0.7s ease-out;
+}
+
+/* Animação do título */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botões principais */
+.lol-button {
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  background-color: #ff4655;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lol-button:hover {
+  background-color: #b12727;
+}
+
+/* Grid flexível para cards */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+/* Cards principais */
+.lol-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 1.8rem;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.2);
+  color: #eee;
+  border: 1px solid rgba(211, 47, 47, 0.53); /* #d32f2f88 */
+  text-align: left;
+}
+
+/* Seção de destaque/alterada */
+.outro {
+  background-color: #1b1b1b;
+}
+
+/* Seção de vídeo */
+.video-section .video-frame {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
+}
+
+/* Seção de destaques com margem superior */
+.highlights {
+  margin-top: 2rem;
+}
+
+/* Cards para destaques */
+.lol-highlight-card {
+  background-color: #252525;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  flex: 1;
+  min-width: 260px;
+  box-shadow: 0 0 15px rgba(211, 47, 47, 0.15);
+  color: #fff;
+  border: 1px solid rgba(211, 47, 47, 0.4); /* #d32f2f66 */
+  text-align: left;
+}
+
+/* Seção com texto e imagem lado a lado */
+.image-text-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  color: #eee;
+  text-align: left;
+}
+
+.image-text-section .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.image-text-section .image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
+}
+
+/* Seção branca para destaque */
+.white-section {
+  background-color: #fff;
+  color: #222;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção de citação */
+.quote-section {
+  background-color: #222;
+  color: #ff4655;
+  font-style: italic;
+  border-left: 5px solid #ff4655;
+  margin: 3rem 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.quote-section cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #eee;
+}
+
+/* Chamada para ação */
+.call-to-action {
+  background-color: #1f1f1f;
+  padding: 3rem 2rem;
+  border-radius: 14px;
+  margin-top: 3rem;
+  color: #eee;
+}
+
+.call-to-action h2 {
+  color: #ff4655;
+  font-weight: 900;
+  font-size: 2.4rem;
+}
+
+.call-to-action p {
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 720px) {
+  .image-text-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-text-section .text {
+    margin-bottom: 1.5rem;
+  }
+}
